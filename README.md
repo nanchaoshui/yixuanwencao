@@ -7,3 +7,10 @@
 Email：qianjin@ustc.edu chian.jin@sohu.com 
 
 WeChat: w1280453
+
+构建所需字体：
+  * Source Han Sans SC Normal
+  * Times New Roman
+  * 方正博雅宋_GBK
+  * 方正清刻本悦宋简体
+  
