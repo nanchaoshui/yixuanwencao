@@ -1,0 +1,102 @@
+\documentclass[11pt,openright,a5paper]{ctexbook}
+\usepackage[paperheight=204mm,paperwidth=140mm,top=27mm,bottom=17mm,left=21mm,right=16mm,footskip=10mm]{geometry}
+\usepackage[colorlinks,linkcolor=black,anchorcolor=black,citecolor=black,CJKbookmarks=True]{hyperref}
+\usepackage{graphicx}
+\usepackage[perpage,stable,marginal]{footmisc}
+\usepackage{amsfonts,amssymb}
+
+% 字体设置
+\setCJKfamilyfont{fzyuesong}{FZQingKeBenYueSongS-R-GB}
+\newcommand*{\yuesong}{\CJKfamily{fzyuesong}}
+\setmainfont{Times New Roman}
+\setCJKmainfont[BoldFont={Source Han Sans SC Normal}]{FZBoYaSong}
+
+
+% 取消目录编号
+\setcounter{secnumdepth}{-2}
+\setcounter{tocdepth}{1}
+
+
+% 标题格式设置
+\usepackage{titlesec}
+\titleformat{\chapter}{\centering\zihao{1}\yuesong}{\chaptertitle}{0pt}{}
+\titleformat{\section}{\centering\zihao{3}\yuesong}{\sectiontitle}{0pt}{\clearpage}
+\renewpagestyle{plain}{
+	\sethead[\zihao{6}\kaishu\sectiontitle][][\zihao{6}\yuesong\chaptertitle]{\zihao{6}\yuesong\chaptertitle}{}{\zihao{6}\kaishu\sectiontitle}
+	\setfoot[\zihao{6}\thepage][][]{}{}{\zihao{6}\thepage}      %设置页脚，可以在页脚添加 \thepage  显示页数
+}
+
+% 无标号脚注
+\usepackage{lipsum}
+\newcommand\blfootnote[1]{% 
+	\begingroup 
+	\renewcommand\thefootnote{}\footnote{#1}% 
+	\addtocounter{footnote}{-1}% 
+	\endgroup 
+}
+
+\newcommand{\fspace}[1][1em]{\hspace{#1}}
+\newcommand{\pskip}[1][0.75em]{\vspace{#1}}
+
+\begin{document}
+\zihao{5}	
+
+\input{tex/frontpage}
+\input{tex/content}
+
+\chapter{闷~~骚}
+\thispagestyle{empty}
+\pagenumbering{arabic}\setcounter{page}{1}
+\clearpage\mbox{}\thispagestyle{empty}
+
+\input{tex/mensao-taxuefangmei}
+\input{tex/mensao-zhongqiu}
+\input{tex/mensao-huadie}
+\input{tex/mensao-yiyu}
+\input{tex/mensao-jicai}
+\input{tex/mensao-muguchenzhongjiuhuashan}
+
+\chapter{潜~~歌}
+\thispagestyle{empty}
+\clearpage\mbox{}\thispagestyle{empty}
+
+\input{tex/qiange-zhimeigui}
+\input{tex/qiange-fensedemeng}
+\input{tex/qiange-shangui}
+\input{tex/qiange-moyuer-ganhuai}
+\input{tex/qiange-guiquzhige}
+\input{tex/qiange-daijiaoliaodewuzhe}
+\input{tex/qiange-wuzhefenghuang}
+\input{tex/qiange-weilewangquedejinian}
+\input{tex/qiange-wobuganshuochunidemingzi}
+\input{tex/qiange-shiweilangman}
+\input{tex/qiange-wuti}
+\input{tex/qiange-zhongqiu}
+
+\chapter{打笔仗}
+\leftskip=0mm
+\rightskip=0mm
+\thispagestyle{empty}
+\clearpage\mbox{}\thispagestyle{empty}
+
+\input{tex/dabizhang-chetoucheweidewei2003nianwenti}
+\input{tex/dabizhang-youchucuole}
+\input{tex/dabizhang-jiapudexiaohua}
+\input{tex/dabizhang-zhanggongyaodejiapubuyidinghuangtang}
+\input{tex/dabizhang-duzhanggongyaoxianshengguanyufeichuyinlidexinshexiang}
+\input{tex/dabizhang-daqibushisuibianjiunenglade}
+\input{tex/dabizhang-zhanggongyaoxianshengzuihaobuyaotanlishi}
+\input{tex/dabizhang-nandaozhendeshiwowudulezhanggongyaoxiansheng}
+\input{tex/dabizhang-shuoninshiwenkeshaniudoushitaijunin}
+\input{tex/dabizhang-jiaruzhanggongyaoxiansheng}
+\input{tex/dabizhang-zhanggongyaoyouzaixiabailishi}
+\input{tex/dabizhang-zhenlishibeisongsikao}
+
+\chapter{理工男}
+\thispagestyle{empty}
+\clearpage\mbox{}\thispagestyle{empty}
+
+\input{tex/ligongnan-weilaizhanshi}
+
+	
+\end{document}
