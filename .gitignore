@@ -1,5 +1,6 @@
-## Build directory
+## Directories
 build
+font
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

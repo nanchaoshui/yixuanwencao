@@ -26,7 +26,7 @@ if not exist "./%BuildPath%" (
 @rem ------------------------------------------------
 @rem ->> Build textual content
 @rem ------------------------------------------------
-%CompileName% -synctex=1 -interaction=nonstopmode -output-directory=%BuildPath% %FileName%
+@rem %CompileName% -synctex=1 -interaction=nonstopmode -output-directory=%BuildPath% %FileName%
 %CompileName% -synctex=1 -interaction=nonstopmode -output-directory=%BuildPath% %FileName%
 @rem ------------------------------------------------
 @rem ->> View compiled file
