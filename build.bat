@@ -1,37 +1,38 @@
 @rem ------------------------------------------------
 @echo off
 @rem ------------------------------------------------
-@rem ->> Set tex compiler
+@rem ->> Source and dist file names
 @rem ------------------------------------------------
-set CompilerOrder="2"
+set PDFFileName=ÒËÐùÎÄÆH
+set TEXFileName=yixuanwencao
 @rem ------------------------------------------------
-if %CompilerOrder% == "1" (
-set CompileName="pdflatex"
-) else (
-set CompileName="xelatex"
-)
+@rem ->> TEX compiler
 @rem ------------------------------------------------
-@rem ->> Get source filename
+set Compiler=xelatex
 @rem ------------------------------------------------
-for %%F in (*.tex) do (
-set FileName=%%~nF
-)
-@rem ------------------------------------------------
-@rem ->> Set build directory
+@rem ->> Build directory
 @rem ------------------------------------------------
 set BuildPath=build
-if not exist "./%BuildPath%" (
- md %BuildPath%
- )
+if not exist .\%BuildPath% (
+md %BuildPath%
+)
 @rem ------------------------------------------------
 @rem ->> Build textual content
 @rem ------------------------------------------------
 @rem %CompileName% -synctex=1 -interaction=nonstopmode -output-directory=%BuildPath% %FileName%
-%CompileName% -synctex=1 -interaction=nonstopmode -output-directory=%BuildPath% %FileName%
+%Compiler% -synctex=1 -output-directory=%BuildPath% %TEXFileName%
+if exist .\%BuildPath%\%PDFFileName%.pdf (
+del .\%BuildPath%\%PDFFileName%.pdf
+)
+if exist .\%BuildPath%\%TEXFileName%.pdf (
+rename .\%BuildPath%\%TEXFileName%.pdf %PDFFileName%.pdf
+)
 @rem ------------------------------------------------
 @rem ->> View compiled file
 @rem ------------------------------------------------
-start  " " /max "./%BuildPath%/%FileName%.pdf"
+if exist .\%BuildPath%\%PDFFileName%.pdf (
+start  " " /max .\%BuildPath%\%PDFFileName%.pdf
+)
 echo ------------------------------------------------
-echo %CompileName% %FileName%.tex finished...
+echo %Compiler% %TEXFileName%.tex finished...
 echo ------------------------------------------------
