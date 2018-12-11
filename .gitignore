@@ -2,6 +2,11 @@
 build
 font
 
+## Font files
+*.ttf
+*.otf
+*.ttc
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
